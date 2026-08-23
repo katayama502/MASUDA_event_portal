@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Zen Maru Gothic", "Noto Sans JP", sans-serif;
+  --font-body: "Noto Sans JP", "Zen Maru Gothic", sans-serif;
+
+  --color-cream: #fff8ef;
+  --color-cream-deep: #fbeee0;
+  --color-paper: #fffdf9;
+
+  --color-ink: #3a2e28;
+  --color-ink-soft: #6b5c52;
+
+  --color-orange-50: #fef3ec;
+  --color-orange-100: #fce2cd;
+  --color-orange-300: #f2a876;
+  --color-orange-500: #e8703a;
+  --color-orange-600: #d15e2a;
+  --color-orange-700: #b04a1f;
+
+  --color-green-100: #e6ecd9;
+  --color-green-400: #8ba86e;
+  --color-green-600: #5f7a45;
+  --color-green-700: #4a6135;
+
+  --color-sun-300: #f9d27a;
+  --color-sun-500: #f4b942;
+  --color-sun-600: #dc9f24;
+
+  --color-sky-100: #e3eef1;
+  --color-sky-500: #6ba3ae;
+
+  --shadow-warm: 0 10px 30px -12px rgba(184, 96, 42, 0.28);
+  --shadow-warm-sm: 0 4px 14px -6px rgba(184, 96, 42, 0.22);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+::selection {
+  background-color: var(--color-sun-300);
+  color: var(--color-ink);
+}
+
+/* scrollbar for horizontal chip rows */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-pop-in {
+  animation: pop-in 0.35s ease-out both;
+}
