@@ -19,7 +19,7 @@ const FLOATERS = [
 ];
 
 export function TopPage() {
-  const { events } = useAppData();
+  const { events, organizers } = useAppData();
   const [keyword, setKeyword] = useState("");
   const [category, setCategory] = useState<Category | null>(null);
   const [area, setArea] = useState<Area | null>(null);
@@ -45,6 +45,14 @@ export function TopPage() {
   );
 
   const isFiltering = keyword.trim() !== "" || category !== null || area !== null || range !== null;
+
+  const publishedEvents = useMemo(() => events.filter((e) => e.status === "published"), [events]);
+  const stats = [
+    { value: publishedEvents.length, label: "掲載中の活動" },
+    { value: publishedEvents.filter((e) => e.type === "継続").length, label: "継続活動" },
+    { value: organizers.length, label: "参加団体・店舗" },
+    { value: 4, label: "対応エリア" },
+  ];
 
   return (
     <div className="pb-10">
@@ -91,6 +99,17 @@ export function TopPage() {
 
       <div className="border-b-4 border-ink bg-teal-300 text-ink">
         <Marquee text="ますだ日和 ・ MASUDA HIYORI ・ 益田市地域活動ポータル" />
+      </div>
+
+      <div className="border-b-4 border-ink bg-obsidian py-8 text-cream">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 px-4 sm:grid-cols-4">
+          {stats.map((s) => (
+            <div key={s.label} className="text-center">
+              <p className="font-display text-3xl font-black text-sun-300 sm:text-4xl">{s.value}</p>
+              <p className="mt-1 text-xs font-medium text-cream/70 sm:text-sm">{s.label}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="mx-auto max-w-6xl px-4 pt-8">

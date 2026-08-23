@@ -11,6 +11,9 @@
   --color-ink: #3a2e28;
   --color-ink-soft: #6b5c52;
 
+  --color-obsidian: #17140f;
+  --color-obsidian-soft: #2a251d;
+
   --color-orange-50: #fef3ec;
   --color-orange-100: #fce2cd;
   --color-orange-300: #f2a876;
@@ -114,6 +117,30 @@ body {
 }
 .marquee-track {
   animation: marquee-scroll 26s linear infinite;
+}
+
+@keyframes drawer-slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.animate-drawer-in {
+  animation: drawer-slide-in 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes scrim-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.animate-scrim-in {
+  animation: scrim-fade-in 0.2s ease-out both;
 }
 
 @keyframes float-bob {

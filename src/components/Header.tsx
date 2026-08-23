@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { NavDrawer } from "./NavDrawer";
 
 const NAV_LINKS = [
   { to: "/", label: "トップ" },
@@ -7,6 +8,11 @@ const NAV_LINKS = [
   { to: "/continuous", label: "継続活動" },
   { to: "/guide", label: "使い方" },
   { to: "/about", label: "運営について" },
+];
+
+const DRAWER_EXTRA_LINKS = [
+  { to: "/mypage", label: "主催者ページ（マイダッシュボード）" },
+  { to: "/admin", label: "運営管理画面（デモ）" },
 ];
 
 export function Header() {
@@ -56,51 +62,17 @@ export function Header() {
           </Link>
           <button
             type="button"
-            className="flex h-10 w-10 items-center justify-center rounded-full text-ink hover:bg-orange-100 md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-ink bg-obsidian text-cream md:hidden"
             aria-label="メニューを開く"
             aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
+            onClick={() => setOpen(true)}
           >
-            {open ? "✕" : "☰"}
+            ☰
           </button>
         </div>
       </div>
 
-      {open && (
-        <div className="border-t border-orange-100 bg-cream px-4 pb-4 pt-2 md:hidden">
-          <nav className="flex flex-col gap-1">
-            {NAV_LINKS.map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                end={link.to === "/"}
-                onClick={() => setOpen(false)}
-                className={({ isActive }) =>
-                  `rounded-xl px-3.5 py-2.5 text-sm font-medium ${
-                    isActive ? "bg-orange-100 text-orange-700" : "text-ink-soft"
-                  }`
-                }
-              >
-                {link.label}
-              </NavLink>
-            ))}
-            <NavLink
-              to="/mypage"
-              onClick={() => setOpen(false)}
-              className="rounded-xl px-3.5 py-2.5 text-sm font-medium text-ink-soft"
-            >
-              主催者ページ（マイダッシュボード）
-            </NavLink>
-            <NavLink
-              to="/admin"
-              onClick={() => setOpen(false)}
-              className="rounded-xl px-3.5 py-2.5 text-sm font-medium text-ink-soft"
-            >
-              運営管理画面（デモ）
-            </NavLink>
-          </nav>
-        </div>
-      )}
+      <NavDrawer open={open} onClose={() => setOpen(false)} links={NAV_LINKS} extraLinks={DRAWER_EXTRA_LINKS} />
     </header>
   );
 }

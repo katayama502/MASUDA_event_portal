@@ -14,10 +14,10 @@ npm run dev
 ## 技術スタック
 
 - React 19 + TypeScript + Vite
-- React Router（ルーティング）
-- Tailwind CSS v4（デザインシステム／`src/index.css` の `@theme` でカラー・フォントを定義）
+- React Router（`HashRouter`）— GitHub Pagesは静的ホスティングでクライアントサイドルーティング用のサーバーリライト設定ができないため、URLの`#`以降だけで遷移が完結するHashRouterを採用（例: `/#/events/xxx`）
+- Tailwind CSS v4（デザインシステム／`src/index.css` の `@theme` でカラー・フォントを定義。オレンジ・ライム・ティールのポップな配色と、太いアウトライン＋ベタ影の「ステッカー」風スタイルが特徴）
 - 状態管理: React Context（`src/context/AppDataContext.tsx`）＋ `localStorage` 永続化
-- データ: すべてモックデータ（`src/data/mockData.ts`）。実際の益田市の情報ではありません
+- データ: モックデータ（`src/data/mockData.ts`）。イベントの写真はPexelsのフリー素材を使用し、カテゴリに合わせて設定（実際の益田市のイベント情報ではありません）
 
 ## 実装した画面（設計書 6章 サイトマップ対応）
 
