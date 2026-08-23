@@ -13,6 +13,7 @@ export function EventDetailPage() {
   const [reportOpen, setReportOpen] = useState(false);
   const [reportReason, setReportReason] = useState("");
   const [reportSent, setReportSent] = useState(false);
+  const [imgFailed, setImgFailed] = useState(false);
 
   const event = id ? getEvent(id) : undefined;
 
@@ -62,15 +63,26 @@ export function EventDetailPage() {
       </Link>
 
       <div
-        className="relative mt-4 flex h-48 items-center justify-center rounded-3xl text-7xl shadow-warm sm:h-64"
+        className="relative mt-4 flex h-56 items-center justify-center overflow-hidden rounded-3xl border-2 border-ink text-7xl shadow-pop sm:h-72"
         style={{ backgroundColor: event.imageColor }}
       >
-        <span aria-hidden>{event.imageEmoji}</span>
+        {event.imageUrl && !imgFailed ? (
+          <img
+            src={event.imageUrl}
+            alt={event.imageAlt ?? event.title}
+            loading="lazy"
+            decoding="async"
+            onError={() => setImgFailed(true)}
+            className="h-full w-full object-cover"
+          />
+        ) : (
+          <span aria-hidden>{event.imageEmoji}</span>
+        )}
         <div className="absolute right-4 top-4">
           <FavoriteButton eventId={event.id} />
         </div>
         {event.type === "継続" && (
-          <span className="absolute left-4 top-4 rounded-full bg-green-600/90 px-3 py-1.5 text-sm font-bold text-white">
+          <span className="absolute left-4 top-4 rounded-full border-2 border-ink bg-green-400 px-3 py-1.5 text-sm font-bold text-ink">
             継続活動
           </span>
         )}

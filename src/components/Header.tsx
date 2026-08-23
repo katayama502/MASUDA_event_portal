@@ -13,10 +13,10 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-orange-100 bg-cream/90 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b-2 border-ink bg-cream/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-        <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-orange-500 text-lg text-white shadow-warm-sm">
+        <Link to="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
+          <span className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-ink bg-orange-500 text-lg text-white shadow-pop-sm">
             🌅
           </span>
           <span className="font-display text-lg font-black tracking-tight text-ink">
@@ -44,13 +44,13 @@ export function Header() {
         <div className="flex items-center gap-2">
           <Link
             to="/post"
-            className="hidden rounded-full bg-orange-500 px-4 py-2 text-sm font-bold text-white shadow-warm-sm transition-colors hover:bg-orange-600 sm:inline-block"
+            className="pop-pressable hidden rounded-full border-2 border-ink bg-orange-500 px-4 py-2 text-sm font-bold text-white shadow-pop-sm sm:inline-block"
           >
             ＋ 活動を投稿する
           </Link>
           <Link
             to="/mypage"
-            className="hidden rounded-full border border-orange-200 px-3.5 py-2 text-sm font-medium text-orange-700 transition-colors hover:bg-orange-50 md:inline-block"
+            className="hidden rounded-full border-2 border-ink bg-teal-300 px-3.5 py-2 text-sm font-bold text-ink transition-colors hover:bg-teal-100 md:inline-block"
           >
             主催者ページ
           </Link>

@@ -39,7 +39,7 @@ export function GuidePage() {
         </div>
         <Link
           to="/"
-          className="mt-4 inline-block rounded-full bg-orange-500 px-5 py-2.5 text-sm font-bold text-white hover:bg-orange-600"
+          className="pop-pressable mt-4 inline-block rounded-full border-2 border-ink bg-orange-500 px-5 py-2.5 text-sm font-bold text-white shadow-pop-sm"
         >
           活動をさがしに行く →
         </Link>
@@ -74,7 +74,7 @@ export function GuidePage() {
 
         <Link
           to="/post"
-          className="mt-4 inline-block rounded-full bg-orange-500 px-5 py-2.5 text-sm font-bold text-white hover:bg-orange-600"
+          className="pop-pressable mt-4 inline-block rounded-full border-2 border-ink bg-orange-500 px-5 py-2.5 text-sm font-bold text-white shadow-pop-sm"
         >
           活動を投稿する →
         </Link>

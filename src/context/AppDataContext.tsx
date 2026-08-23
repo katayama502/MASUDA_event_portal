@@ -21,6 +21,8 @@ interface NewEventInput {
   applicationMethod: string;
   imageEmoji: string;
   imageColor: string;
+  imageUrl?: string;
+  imageAlt?: string;
   organizerId?: string;
   newOrganizerName?: string;
   newOrganizerContact?: string;
@@ -54,15 +56,21 @@ function makeId(prefix: string): string {
   return `${prefix}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`;
 }
 
+// モックデータの形（写真フィールドの追加など）が変わるたびに末尾のバージョンを上げ、
+// 古いlocalStorageのキャッシュが新しいシードデータを覆い隠さないようにする。
+const DATA_VERSION = "v2";
+
 export function AppDataProvider({ children }: { children: ReactNode }) {
-  const [events, setEvents] = useState<EventItem[]>(() => loadJson("events", seedEvents));
-  const [organizers, setOrganizers] = useState<Organizer[]>(() => loadJson("organizers", seedOrganizers));
-  const [reports, setReports] = useState<ReportItem[]>(() => loadJson("reports", seedReports));
+  const [events, setEvents] = useState<EventItem[]>(() => loadJson(`events:${DATA_VERSION}`, seedEvents));
+  const [organizers, setOrganizers] = useState<Organizer[]>(() =>
+    loadJson(`organizers:${DATA_VERSION}`, seedOrganizers)
+  );
+  const [reports, setReports] = useState<ReportItem[]>(() => loadJson(`reports:${DATA_VERSION}`, seedReports));
   const [favorites, setFavorites] = useState<string[]>(() => loadJson("favorites", [] as string[]));
 
-  useEffect(() => saveJson("events", events), [events]);
-  useEffect(() => saveJson("organizers", organizers), [organizers]);
-  useEffect(() => saveJson("reports", reports), [reports]);
+  useEffect(() => saveJson(`events:${DATA_VERSION}`, events), [events]);
+  useEffect(() => saveJson(`organizers:${DATA_VERSION}`, organizers), [organizers]);
+  useEffect(() => saveJson(`reports:${DATA_VERSION}`, reports), [reports]);
   useEffect(() => saveJson("favorites", favorites), [favorites]);
 
   const getOrganizer = useCallback(
@@ -122,6 +130,8 @@ export function AppDataProvider({ children }: { children: ReactNode }) {
       applicationMethod: input.applicationMethod,
       imageEmoji: input.imageEmoji || "📌",
       imageColor: input.imageColor || "var(--color-orange-100)",
+      imageUrl: input.imageUrl?.trim() || undefined,
+      imageAlt: input.imageAlt?.trim() || undefined,
       status: "pending",
       featured: false,
       createdAt: now,

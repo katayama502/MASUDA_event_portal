@@ -43,6 +43,8 @@ export function PostFormPage() {
   const [description, setDescription] = useState("");
   const [emoji, setEmoji] = useState(EMOJI_CHOICES[0]);
   const [color, setColor] = useState(COLOR_CHOICES[0].value);
+  const [imageUrl, setImageUrl] = useState("");
+  const [imagePreviewFailed, setImagePreviewFailed] = useState(false);
 
   const [isFirstTime, setIsFirstTime] = useState(organizers.length === 0);
   const [organizerId, setOrganizerId] = useState(organizers[0]?.id ?? "");
@@ -91,6 +93,8 @@ export function PostFormPage() {
       applicationMethod: applicationMethod.trim(),
       imageEmoji: emoji,
       imageColor: color,
+      imageUrl: imageUrl.trim() && !imagePreviewFailed ? imageUrl.trim() : undefined,
+      imageAlt: title.trim(),
       organizerId: isFirstTime ? undefined : organizerId,
       newOrganizerName: isFirstTime ? newOrganizerName.trim() : undefined,
       newOrganizerContact: isFirstTime ? newOrganizerContact.trim() : undefined,
@@ -239,7 +243,39 @@ export function PostFormPage() {
           />
         </Field>
 
-        <Field label="アイキャッチ（画像の代わりに絵文字を選択）">
+        <Field label="写真URL（任意）" hint="お手持ちの写真の公開URLを貼り付けると、絵文字の代わりに表示されます">
+          <input
+            type="url"
+            value={imageUrl}
+            onChange={(e) => {
+              setImageUrl(e.target.value);
+              setImagePreviewFailed(false);
+            }}
+            placeholder="https://..."
+            className="input"
+          />
+          {imageUrl.trim() && (
+            <div
+              className="mt-2 flex h-28 w-full items-center justify-center overflow-hidden rounded-xl border-2 border-ink text-3xl"
+              style={{ backgroundColor: color }}
+            >
+              {imagePreviewFailed ? (
+                <span className="px-4 text-center text-xs font-medium text-ink-soft">
+                  画像を読み込めませんでした。URLをご確認ください（絵文字が代わりに表示されます）
+                </span>
+              ) : (
+                <img
+                  src={imageUrl.trim()}
+                  alt="プレビュー"
+                  onError={() => setImagePreviewFailed(true)}
+                  className="h-full w-full object-cover"
+                />
+              )}
+            </div>
+          )}
+        </Field>
+
+        <Field label="アイキャッチ（画像がない場合に使う絵文字）">
           <div className="flex flex-wrap gap-2">
             {EMOJI_CHOICES.map((em) => (
               <button
@@ -309,7 +345,7 @@ export function PostFormPage() {
 
         <button
           type="submit"
-          className="rounded-full bg-orange-500 px-6 py-3.5 text-base font-bold text-white shadow-warm-sm transition-colors hover:bg-orange-600"
+          className="pop-pressable rounded-full border-2 border-ink bg-orange-500 px-6 py-3.5 text-base font-bold text-white shadow-pop"
         >
           この内容で投稿する
         </button>

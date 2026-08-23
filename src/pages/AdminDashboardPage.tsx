@@ -31,7 +31,7 @@ export function AdminDashboardPage() {
 
   return (
     <div className="mx-auto max-w-5xl px-4 pb-20 pt-6">
-      <div className="rounded-2xl bg-ink px-5 py-4 text-white">
+      <div className="rounded-2xl border-2 border-ink bg-ink px-5 py-4 text-white shadow-pop">
         <p className="text-xs font-bold uppercase tracking-wide text-orange-300">Admin (デモ)</p>
         <h1 className="mt-0.5 font-display text-xl font-black">運営管理画面</h1>
         <p className="mt-1 text-xs text-white/70">

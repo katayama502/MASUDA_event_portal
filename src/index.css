@@ -30,8 +30,20 @@
   --color-sky-100: #e3eef1;
   --color-sky-500: #6ba3ae;
 
+  --color-teal-100: #dcedee;
+  --color-teal-300: #a8d3d4;
+  --color-teal-500: #7cb8ba;
+  --color-teal-700: #3f7375;
+
+  --color-lime-100: #eaf1d5;
+  --color-lime-300: #cddb9b;
+  --color-lime-500: #a8c05f;
+  --color-lime-700: #5f7433;
+
   --shadow-warm: 0 10px 30px -12px rgba(184, 96, 42, 0.28);
   --shadow-warm-sm: 0 4px 14px -6px rgba(184, 96, 42, 0.22);
+  --shadow-pop: 5px 5px 0 0 var(--color-ink);
+  --shadow-pop-sm: 3px 3px 0 0 var(--color-ink);
 }
 
 html {
@@ -75,4 +87,43 @@ body {
 }
 .animate-pop-in {
   animation: pop-in 0.35s ease-out both;
+}
+
+/* ポップな「べたっ」としたステッカー影。ボタンやカードに立体感とかわいさを添える */
+.shadow-pop {
+  box-shadow: var(--shadow-pop);
+}
+.shadow-pop-sm {
+  box-shadow: var(--shadow-pop-sm);
+}
+.pop-pressable {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.pop-pressable:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 0 var(--color-ink);
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee-scroll 26s linear infinite;
+}
+
+@keyframes float-bob {
+  0%, 100% {
+    transform: translateY(0) rotate(var(--float-rot, 0deg));
+  }
+  50% {
+    transform: translateY(-10px) rotate(var(--float-rot, 0deg));
+  }
+}
+.animate-float {
+  animation: float-bob 5s ease-in-out infinite;
 }

@@ -19,8 +19,8 @@ export function ContinuousPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 pb-10 pt-6 sm:pt-10">
-      <section className="mb-8 rounded-[2rem] bg-green-100 px-6 py-8 sm:px-10 sm:py-10">
-        <p className="font-display text-sm font-bold tracking-wide text-green-700">Regular Activities</p>
+      <section className="mb-8 rounded-[2rem] border-2 border-ink bg-lime-300 px-6 py-8 shadow-pop sm:px-10 sm:py-10">
+        <p className="font-display text-sm font-bold tracking-wide text-lime-700">Regular Activities</p>
         <h1 className="mt-2 font-display text-2xl font-black leading-tight text-ink sm:text-3xl">
           継続活動まとめ
         </h1>

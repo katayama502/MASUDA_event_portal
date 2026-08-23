@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import type { EventItem } from "../types";
 import { CategoryBadge } from "./CategoryBadge";
@@ -9,27 +10,40 @@ export function EventCard({ event }: { event: EventItem }) {
   const { getOrganizer } = useAppData();
   const organizer = getOrganizer(event.organizerId);
   const relLabel = relativeDayLabel(event.startDateTime);
+  const [imgFailed, setImgFailed] = useState(false);
+  const showPhoto = event.imageUrl && !imgFailed;
 
   return (
     <Link
       to={`/events/${event.id}`}
-      className="group flex flex-col overflow-hidden rounded-3xl bg-paper shadow-warm-sm ring-1 ring-orange-100/60 transition-all hover:-translate-y-0.5 hover:shadow-warm"
+      className="group flex flex-col overflow-hidden rounded-3xl border-2 border-ink bg-paper shadow-pop-sm transition-all hover:-translate-y-1 hover:shadow-pop"
     >
       <div
-        className="relative flex h-32 items-center justify-center text-5xl"
+        className="relative flex h-36 items-center justify-center overflow-hidden text-5xl"
         style={{ backgroundColor: event.imageColor }}
       >
-        <span aria-hidden>{event.imageEmoji}</span>
+        {showPhoto ? (
+          <img
+            src={event.imageUrl}
+            alt={event.imageAlt ?? event.title}
+            loading="lazy"
+            decoding="async"
+            onError={() => setImgFailed(true)}
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        ) : (
+          <span aria-hidden>{event.imageEmoji}</span>
+        )}
         <div className="absolute right-3 top-3">
           <FavoriteButton eventId={event.id} />
         </div>
         {event.type === "継続" && (
-          <span className="absolute left-3 top-3 rounded-full bg-green-600/90 px-2.5 py-1 text-xs font-bold text-white">
+          <span className="absolute left-3 top-3 rounded-full border-2 border-ink bg-green-400 px-2.5 py-1 text-xs font-bold text-ink">
             継続活動
           </span>
         )}
         {relLabel && (
-          <span className="absolute bottom-3 left-3 rounded-full bg-ink/80 px-2.5 py-1 text-xs font-bold text-white">
+          <span className="absolute bottom-3 left-3 rounded-full bg-ink/85 px-2.5 py-1 text-xs font-bold text-white">
             {relLabel}
           </span>
         )}

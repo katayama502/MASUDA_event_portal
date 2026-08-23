@@ -44,7 +44,7 @@ export function CalendarPage() {
     <div className="mx-auto max-w-5xl px-4 pb-10 pt-6 sm:pt-10">
       <SectionHeading eyebrow="Calendar" title="月間カレンダー" />
 
-      <div className="rounded-3xl bg-paper p-4 shadow-warm-sm ring-1 ring-orange-100/60 sm:p-6">
+      <div className="rounded-3xl border-2 border-ink bg-paper p-4 shadow-pop-sm sm:p-6">
         <div className="mb-4 flex items-center justify-between">
           <button
             type="button"

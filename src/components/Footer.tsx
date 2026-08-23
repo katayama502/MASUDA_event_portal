@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 
 export function Footer() {
   return (
-    <footer className="mt-16 border-t border-orange-100 bg-cream-deep/60 pb-24 pt-10 md:pb-10">
+    <footer className="mt-16 border-t-4 border-ink bg-cream-deep/60 pb-24 pt-10 md:pb-10">
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex flex-col gap-8 sm:flex-row sm:justify-between">
           <div>
             <div className="flex items-center gap-2">
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-500 text-white">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-ink bg-orange-500 text-white">
                 🌅
               </span>
               <span className="font-display text-lg font-black text-ink">ますだ日和</span>

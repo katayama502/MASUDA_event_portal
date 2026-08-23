@@ -58,6 +58,8 @@ export interface EventItem {
   applicationMethod: string;
   imageEmoji: string;
   imageColor: string;
+  imageUrl?: string;
+  imageAlt?: string;
   status: EventStatus;
   featured: boolean;
   moderationNote?: string;
