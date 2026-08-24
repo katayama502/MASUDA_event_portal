@@ -19,10 +19,10 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b-2 border-ink bg-cream/95 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b-2 border-obsidian bg-cream/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <span className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-ink bg-orange-500 text-lg text-white shadow-pop-sm">
+          <span className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-obsidian bg-orange-500 text-lg text-white shadow-pop-sm">
             🌅
           </span>
           <span className="font-display text-lg font-black tracking-tight text-ink">
@@ -30,7 +30,7 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-1 lg:flex">
           {NAV_LINKS.map((link) => (
             <NavLink
               key={link.to}
@@ -50,19 +50,19 @@ export function Header() {
         <div className="flex items-center gap-2">
           <Link
             to="/post"
-            className="pop-pressable hidden rounded-full border-2 border-ink bg-orange-500 px-4 py-2 text-sm font-bold text-white shadow-pop-sm sm:inline-block"
+            className="pop-pressable hidden rounded-full border-2 border-obsidian bg-orange-500 px-4 py-2 text-sm font-bold text-white shadow-pop-sm sm:inline-block"
           >
             ＋ 活動を投稿する
           </Link>
           <Link
             to="/mypage"
-            className="hidden rounded-full border-2 border-ink bg-teal-300 px-3.5 py-2 text-sm font-bold text-ink transition-colors hover:bg-teal-100 md:inline-block"
+            className="hidden rounded-full border-2 border-obsidian bg-white px-3.5 py-2 text-sm font-bold text-obsidian transition-colors hover:bg-cream-deep lg:inline-block"
           >
             主催者ページ
           </Link>
           <button
             type="button"
-            className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-ink bg-obsidian text-cream md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-obsidian bg-obsidian text-cream lg:hidden"
             aria-label="メニューを開く"
             aria-expanded={open}
             onClick={() => setOpen(true)}

@@ -7,10 +7,10 @@ import { formatDateTimeRangeJp } from "../lib/dateUtils";
 import type { EventStatus } from "../types";
 
 const STATUS_LABEL: Record<EventStatus, { label: string; className: string }> = {
-  pending: { label: "承認待ち", className: "bg-sun-300/60 text-orange-700" },
-  published: { label: "掲載中", className: "bg-green-100 text-green-700" },
-  rejected: { label: "差し戻し", className: "bg-red-100 text-red-700" },
-  archived: { label: "お休み中", className: "bg-cream-deep text-ink-soft" },
+  pending: { label: "承認待ち", className: "border border-obsidian bg-orange-100 text-orange-700" },
+  published: { label: "掲載中", className: "border border-obsidian bg-white text-obsidian" },
+  rejected: { label: "差し戻し", className: "border border-obsidian bg-red-500 text-white" },
+  archived: { label: "お休み中", className: "border border-obsidian bg-cream-deep text-ink-soft" },
 };
 
 export function OrganizerDashboardPage() {
@@ -79,7 +79,7 @@ export function OrganizerDashboardPage() {
               const status = STATUS_LABEL[event.status];
               const favoriteEstimate = Math.max(0, Math.round(event.viewCount / 6));
               return (
-                <li key={event.id} className="rounded-2xl bg-paper p-4 shadow-warm-sm ring-1 ring-orange-100/60">
+                <li key={event.id} className="rounded-2xl bg-paper p-4 border-2 border-obsidian shadow-pop-sm">
                   <div className="flex flex-wrap items-start justify-between gap-2">
                     <div className="min-w-0">
                       <div className="flex flex-wrap items-center gap-2">

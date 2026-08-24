@@ -44,7 +44,7 @@ export function NavDrawer({ open, onClose, links, extraLinks = [] }: NavDrawerPr
   // ヘッダーのbackdrop-blur（backdrop-filter）がfixed要素の包含ブロックを作ってしまい、
   // ドロワーがヘッダーの高さに閉じ込められるのを避けるため、bodyポータルで描画する。
   return createPortal(
-    <div className="fixed inset-0 z-50 md:hidden">
+    <div className="fixed inset-0 z-50 lg:hidden">
       <button
         type="button"
         aria-label="メニューを閉じる"
@@ -55,10 +55,10 @@ export function NavDrawer({ open, onClose, links, extraLinks = [] }: NavDrawerPr
         role="dialog"
         aria-modal="true"
         aria-label="ナビゲーションメニュー"
-        className="animate-drawer-in absolute right-0 top-0 flex h-full w-[82%] max-w-xs flex-col border-l-2 border-ink bg-obsidian text-cream shadow-2xl"
+        className="animate-drawer-in absolute right-0 top-0 flex h-full w-[82%] max-w-xs flex-col border-l-2 border-obsidian bg-obsidian text-cream shadow-2xl"
       >
         <div className="flex items-center justify-between border-b border-white/15 px-5 py-5">
-          <span className="flex items-center gap-2 font-display text-sm font-bold tracking-wide text-sun-300">
+          <span className="flex items-center gap-2 font-display text-sm font-bold tracking-wide text-orange-500">
             <DrawerIcon />
             メニュー
           </span>

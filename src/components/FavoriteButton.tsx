@@ -14,8 +14,8 @@ export function FavoriteButton({ eventId, className = "" }: { eventId: string; c
       }}
       aria-pressed={active}
       aria-label={active ? "お気に入りから外す" : "お気に入りに追加する"}
-      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-lg transition-all active:scale-90 ${
-        active ? "bg-orange-500 text-white shadow-warm-sm" : "bg-white/90 text-orange-500 shadow-warm-sm"
+      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 border-obsidian text-lg transition-all active:scale-90 ${
+        active ? "bg-orange-500 text-white" : "bg-white text-orange-500"
       } ${className}`}
     >
       {active ? "♥" : "♡"}

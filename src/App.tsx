@@ -28,7 +28,7 @@ export default function App() {
     <div className="flex min-h-dvh flex-col bg-cream">
       <ScrollToTop />
       <Header />
-      <main className="flex-1 pb-16 md:pb-0">
+      <main className="flex-1 pb-16 lg:pb-0">
         <Routes>
           <Route path="/" element={<TopPage />} />
           <Route path="/continuous" element={<ContinuousPage />} />

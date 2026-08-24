@@ -19,7 +19,7 @@ export function AboutPage() {
 
       <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
         {VALUES.map((v) => (
-          <div key={v.title} className="rounded-2xl bg-paper p-4 shadow-warm-sm ring-1 ring-orange-100/60">
+          <div key={v.title} className="rounded-2xl bg-paper p-4 border-2 border-obsidian shadow-pop-sm">
             <span className="text-2xl">{v.icon}</span>
             <p className="mt-2 font-display text-sm font-bold text-ink">{v.title}</p>
             <p className="mt-1 text-sm text-ink-soft">{v.body}</p>

@@ -11,7 +11,7 @@ const TABS = [
 export function MobileNav() {
   return (
     <nav
-      className="fixed inset-x-0 bottom-0 z-40 border-t border-orange-100 bg-paper/95 backdrop-blur md:hidden"
+      className="fixed inset-x-0 bottom-0 z-40 border-t-2 border-obsidian bg-paper/95 backdrop-blur lg:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
       <div className="mx-auto grid max-w-lg grid-cols-5">

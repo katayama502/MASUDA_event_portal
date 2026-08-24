@@ -37,7 +37,7 @@ export function OrganizerPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-4 pb-16 pt-6">
-      <section className="rounded-[2rem] bg-paper p-6 shadow-warm-sm ring-1 ring-orange-100/60 sm:p-8">
+      <section className="rounded-[2rem] bg-paper p-6 border-2 border-obsidian shadow-pop-sm sm:p-8">
         <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
           <span
             className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full text-4xl shadow-warm-sm"

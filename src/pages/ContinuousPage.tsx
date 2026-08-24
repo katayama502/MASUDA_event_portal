@@ -19,12 +19,12 @@ export function ContinuousPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 pb-10 pt-6 sm:pt-10">
-      <section className="mb-8 rounded-[2rem] border-2 border-ink bg-lime-300 px-6 py-8 shadow-pop sm:px-10 sm:py-10">
-        <p className="font-display text-sm font-bold tracking-wide text-lime-700">Regular Activities</p>
-        <h1 className="mt-2 font-display text-2xl font-black leading-tight text-ink sm:text-3xl">
+      <section className="mb-8 rounded-[2rem] border-2 border-obsidian bg-obsidian px-6 py-8 text-cream shadow-pop sm:px-10 sm:py-10">
+        <p className="font-display text-sm tracking-wide text-orange-500">Regular Activities</p>
+        <h1 className="mt-2 font-display text-2xl leading-tight text-cream sm:text-3xl">
           継続活動まとめ
         </h1>
-        <p className="mt-3 max-w-2xl text-sm text-ink-soft sm:text-base">
+        <p className="mt-3 max-w-2xl text-sm text-cream/70 sm:text-base">
           毎週・毎月続いている習い事やサークル、子ども食堂、朝活などをまとめたコーナーです。単発イベントの陰に隠れがちな「地域の定番」に、ここで光を当てます。
         </p>
       </section>
@@ -35,7 +35,7 @@ export function ContinuousPage() {
           <select
             value={area ?? ""}
             onChange={(e) => setArea((e.target.value || null) as Area | null)}
-            className="rounded-full border border-orange-100 bg-white px-3.5 py-2 text-sm font-medium text-ink shadow-warm-sm outline-none focus:border-orange-400"
+            className="rounded-full border-2 border-obsidian bg-white px-3.5 py-2 text-sm font-medium text-ink outline-none focus:ring-2 focus:ring-orange-300"
           >
             <option value="">全地区</option>
             {AREAS.map((a) => (

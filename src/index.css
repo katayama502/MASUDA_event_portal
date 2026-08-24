@@ -1,18 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Zen Maru Gothic", "Noto Sans JP", sans-serif;
-  --font-body: "Noto Sans JP", "Zen Maru Gothic", sans-serif;
+  /* 「#ヒキダシ」を参考に、手書きマーカー風の見出しフォント＋クリーンな明朝寄らずのゴシック本文という
+     コントラストの効いた組み合わせに変更。配色も黒白を基調に、オレンジ1色だけをブランドアクセントとして残す。 */
+  --font-display: "Yusei Magic", "Noto Sans JP", sans-serif;
+  --font-body: "Noto Sans JP", "Yusei Magic", sans-serif;
 
-  --color-cream: #fff8ef;
-  --color-cream-deep: #fbeee0;
-  --color-paper: #fffdf9;
+  --color-cream: #fdfbf7;
+  --color-cream-deep: #f3efe7;
+  --color-paper: #ffffff;
 
   --color-ink: #3a2e28;
   --color-ink-soft: #6b5c52;
 
-  --color-obsidian: #17140f;
-  --color-obsidian-soft: #2a251d;
+  --color-obsidian: #111111;
+  --color-obsidian-soft: #262626;
 
   --color-orange-50: #fef3ec;
   --color-orange-100: #fce2cd;
@@ -43,10 +45,10 @@
   --color-lime-500: #a8c05f;
   --color-lime-700: #5f7433;
 
-  --shadow-warm: 0 10px 30px -12px rgba(184, 96, 42, 0.28);
-  --shadow-warm-sm: 0 4px 14px -6px rgba(184, 96, 42, 0.22);
-  --shadow-pop: 5px 5px 0 0 var(--color-ink);
-  --shadow-pop-sm: 3px 3px 0 0 var(--color-ink);
+  --shadow-warm: 0 10px 30px -12px rgba(17, 17, 17, 0.18);
+  --shadow-warm-sm: 0 4px 14px -6px rgba(17, 17, 17, 0.16);
+  --shadow-pop: 5px 5px 0 0 var(--color-obsidian);
+  --shadow-pop-sm: 3px 3px 0 0 var(--color-obsidian);
 }
 
 html {
@@ -65,8 +67,8 @@ body {
 }
 
 ::selection {
-  background-color: var(--color-sun-300);
-  color: var(--color-ink);
+  background-color: var(--color-orange-300);
+  color: var(--color-obsidian);
 }
 
 /* scrollbar for horizontal chip rows */
@@ -104,7 +106,7 @@ body {
 }
 .pop-pressable:active {
   transform: translate(3px, 3px);
-  box-shadow: 0 0 0 0 var(--color-ink);
+  box-shadow: 0 0 0 0 var(--color-obsidian);
 }
 
 @keyframes marquee-scroll {

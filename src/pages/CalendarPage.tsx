@@ -44,7 +44,7 @@ export function CalendarPage() {
     <div className="mx-auto max-w-5xl px-4 pb-10 pt-6 sm:pt-10">
       <SectionHeading eyebrow="Calendar" title="月間カレンダー" />
 
-      <div className="rounded-3xl border-2 border-ink bg-paper p-4 shadow-pop-sm sm:p-6">
+      <div className="rounded-3xl border-2 border-obsidian bg-paper p-4 shadow-pop-sm sm:p-6">
         <div className="mb-4 flex items-center justify-between">
           <button
             type="button"
@@ -128,7 +128,7 @@ export function CalendarPage() {
                 <li key={`${o.event.id}-${i}`}>
                   <Link
                     to={`/events/${o.event.id}`}
-                    className="flex items-center gap-3 rounded-2xl bg-paper p-3 shadow-warm-sm ring-1 ring-orange-100/60 hover:shadow-warm"
+                    className="flex items-center gap-3 rounded-2xl bg-paper p-3 border-2 border-obsidian shadow-pop-sm hover:shadow-pop"
                   >
                     <span
                       className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-2xl"

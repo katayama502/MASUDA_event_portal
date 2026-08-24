@@ -256,7 +256,7 @@ export function PostFormPage() {
           />
           {imageUrl.trim() && (
             <div
-              className="mt-2 flex h-28 w-full items-center justify-center overflow-hidden rounded-xl border-2 border-ink text-3xl"
+              className="mt-2 flex h-28 w-full items-center justify-center overflow-hidden rounded-xl border-2 border-obsidian text-3xl"
               style={{ backgroundColor: color }}
             >
               {imagePreviewFailed ? (
@@ -345,7 +345,7 @@ export function PostFormPage() {
 
         <button
           type="submit"
-          className="pop-pressable rounded-full border-2 border-ink bg-orange-500 px-6 py-3.5 text-base font-bold text-white shadow-pop"
+          className="pop-pressable rounded-full border-2 border-obsidian bg-orange-500 px-6 py-3.5 text-base font-bold text-white shadow-pop"
         >
           この内容で投稿する
         </button>

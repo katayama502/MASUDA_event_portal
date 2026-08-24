@@ -23,10 +23,8 @@ export function QuickRangeTabs({
             key={tab.key}
             type="button"
             onClick={() => onChange(active ? null : tab.key)}
-            className={`shrink-0 rounded-full px-4 py-2 text-sm font-bold transition-colors ${
-              active
-                ? "bg-orange-500 text-white shadow-warm-sm"
-                : "bg-white text-ink-soft ring-1 ring-orange-100 hover:bg-orange-50"
+            className={`shrink-0 rounded-full border-2 border-obsidian px-4 py-2 text-sm font-bold transition-colors ${
+              active ? "bg-orange-500 text-white" : "bg-white text-ink-soft hover:bg-cream-deep"
             }`}
           >
             {tab.label}

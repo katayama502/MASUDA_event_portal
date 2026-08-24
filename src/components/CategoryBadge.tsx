@@ -5,7 +5,9 @@ export function CategoryBadge({ category, size = "sm" }: { category: Category; s
   const style = CATEGORY_STYLE[category];
   const pad = size === "sm" ? "px-2.5 py-1 text-xs" : "px-3 py-1.5 text-sm";
   return (
-    <span className={`inline-flex items-center gap-1 rounded-full font-medium ${style.bg} ${style.text} ${pad}`}>
+    <span
+      className={`inline-flex items-center gap-1 rounded-full border border-obsidian font-medium ${style.bg} ${style.text} ${pad}`}
+    >
       <span aria-hidden>{style.icon}</span>
       {category}
     </span>

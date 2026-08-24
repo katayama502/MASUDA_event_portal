@@ -6,12 +6,14 @@ interface CategoryStyle {
   text: string;
 }
 
+// 「#ヒキダシ」に倣い、カテゴリごとの背景色は使わず黒枠＋白地に統一。
+// 見分けはアイコンのみで行う（色に頼らないシンプルな線画スタイル）。
 export const CATEGORY_STYLE: Record<Category, CategoryStyle> = {
-  "マルシェ・マーケット": { icon: "🧺", bg: "bg-orange-100", text: "text-orange-700" },
-  "ワークショップ・体験": { icon: "🎨", bg: "bg-sun-300/50", text: "text-orange-700" },
-  "親子・子育て": { icon: "🧸", bg: "bg-sun-300/50", text: "text-orange-700" },
-  "習い事・教室": { icon: "📚", bg: "bg-sky-100", text: "text-ink" },
-  "地域活動・ボランティア": { icon: "🤝", bg: "bg-green-100", text: "text-green-700" },
-  "スポーツ大会・体験": { icon: "🏃", bg: "bg-sky-100", text: "text-ink" },
-  "その他": { icon: "✨", bg: "bg-cream-deep", text: "text-ink-soft" },
+  "マルシェ・マーケット": { icon: "🧺", bg: "bg-white", text: "text-obsidian" },
+  "ワークショップ・体験": { icon: "🎨", bg: "bg-white", text: "text-obsidian" },
+  "親子・子育て": { icon: "🧸", bg: "bg-white", text: "text-obsidian" },
+  "習い事・教室": { icon: "📚", bg: "bg-white", text: "text-obsidian" },
+  "地域活動・ボランティア": { icon: "🤝", bg: "bg-white", text: "text-obsidian" },
+  "スポーツ大会・体験": { icon: "🏃", bg: "bg-white", text: "text-obsidian" },
+  "その他": { icon: "✨", bg: "bg-white", text: "text-obsidian" },
 };

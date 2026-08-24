@@ -16,7 +16,7 @@ export function EventCard({ event }: { event: EventItem }) {
   return (
     <Link
       to={`/events/${event.id}`}
-      className="group flex flex-col overflow-hidden rounded-3xl border-2 border-ink bg-paper shadow-pop-sm transition-all hover:-translate-y-1 hover:shadow-pop"
+      className="group flex flex-col overflow-hidden rounded-3xl border-2 border-obsidian bg-paper shadow-pop-sm transition-all hover:-translate-y-1 hover:shadow-pop"
     >
       <div
         className="relative flex h-36 items-center justify-center overflow-hidden text-5xl"
@@ -38,12 +38,12 @@ export function EventCard({ event }: { event: EventItem }) {
           <FavoriteButton eventId={event.id} />
         </div>
         {event.type === "継続" && (
-          <span className="absolute left-3 top-3 rounded-full border-2 border-ink bg-green-400 px-2.5 py-1 text-xs font-bold text-ink">
+          <span className="absolute left-3 top-3 rounded-full border-2 border-obsidian bg-white px-2.5 py-1 text-xs font-bold text-obsidian">
             継続活動
           </span>
         )}
         {relLabel && (
-          <span className="absolute bottom-3 left-3 rounded-full bg-ink/85 px-2.5 py-1 text-xs font-bold text-white">
+          <span className="absolute bottom-3 left-3 rounded-full border-2 border-obsidian bg-orange-500 px-2.5 py-1 text-xs font-bold text-white">
             {relLabel}
           </span>
         )}

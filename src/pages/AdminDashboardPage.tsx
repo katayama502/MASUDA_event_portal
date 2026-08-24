@@ -31,19 +31,19 @@ export function AdminDashboardPage() {
 
   return (
     <div className="mx-auto max-w-5xl px-4 pb-20 pt-6">
-      <div className="rounded-2xl border-2 border-ink bg-ink px-5 py-4 text-white shadow-pop">
-        <p className="text-xs font-bold uppercase tracking-wide text-orange-300">Admin (デモ)</p>
-        <h1 className="mt-0.5 font-display text-xl font-black">運営管理画面</h1>
+      <div className="rounded-2xl border-2 border-obsidian bg-obsidian px-5 py-4 text-white shadow-pop">
+        <p className="text-xs font-bold uppercase tracking-wide text-orange-500">Admin (デモ)</p>
+        <h1 className="mt-0.5 font-display text-xl">運営管理画面</h1>
         <p className="mt-1 text-xs text-white/70">
           本来はadminロールのみアクセスできる非公開画面です。本プロトタイプでは動作確認のため誰でも閲覧できます。
         </p>
       </div>
 
       <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <StatPill label="承認待ち" value={pending.length} accent="bg-sun-300/60 text-orange-700" />
-        <StatPill label="掲載中" value={published.length} accent="bg-green-100 text-green-700" />
-        <StatPill label="主催者数" value={organizers.length} accent="bg-sky-100 text-ink" />
-        <StatPill label="未対応の通報" value={openReports.length} accent="bg-red-100 text-red-700" />
+        <StatPill label="承認待ち" value={pending.length} accent="border-2 border-obsidian bg-orange-100 text-orange-700" />
+        <StatPill label="掲載中" value={published.length} accent="border-2 border-obsidian bg-white text-obsidian" />
+        <StatPill label="主催者数" value={organizers.length} accent="border-2 border-obsidian bg-white text-obsidian" />
+        <StatPill label="未対応の通報" value={openReports.length} accent="border-2 border-obsidian bg-red-500 text-white" />
       </div>
 
       <div className="no-scrollbar mt-6 flex gap-2 overflow-x-auto border-b border-orange-100">
@@ -73,7 +73,7 @@ export function AdminDashboardPage() {
               {pending.map((event) => {
                 const organizer = getOrganizer(event.organizerId);
                 return (
-                  <li key={event.id} className="rounded-2xl bg-paper p-4 shadow-warm-sm ring-1 ring-orange-100/60">
+                  <li key={event.id} className="rounded-2xl bg-paper p-4 border-2 border-obsidian shadow-pop-sm">
                     <div className="flex items-start justify-between gap-3">
                       <div className="min-w-0">
                         <div className="flex flex-wrap items-center gap-2">
@@ -153,7 +153,7 @@ export function AdminDashboardPage() {
               {published.map((event) => (
                 <li
                   key={event.id}
-                  className="flex flex-wrap items-center justify-between gap-2 rounded-xl bg-paper p-3 shadow-warm-sm ring-1 ring-orange-100/60"
+                  className="flex flex-wrap items-center justify-between gap-2 rounded-xl bg-paper p-3 border-2 border-obsidian shadow-pop-sm"
                 >
                   <div className="flex min-w-0 items-center gap-2">
                     <CategoryBadge category={event.category} />
@@ -177,7 +177,7 @@ export function AdminDashboardPage() {
               {published.map((event) => (
                 <li
                   key={event.id}
-                  className="flex flex-wrap items-center justify-between gap-2 rounded-xl bg-paper p-3 shadow-warm-sm ring-1 ring-orange-100/60"
+                  className="flex flex-wrap items-center justify-between gap-2 rounded-xl bg-paper p-3 border-2 border-obsidian shadow-pop-sm"
                 >
                   <div className="flex min-w-0 items-center gap-2">
                     <CategoryBadge category={event.category} />

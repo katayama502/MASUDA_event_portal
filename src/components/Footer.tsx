@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export function Footer() {
   return (
-    <footer className="mt-16 border-t-4 border-ink bg-obsidian pb-24 pt-10 text-cream md:pb-10">
+    <footer className="mt-16 border-t-4 border-obsidian bg-obsidian pb-24 pt-10 text-cream md:pb-10">
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex flex-col gap-8 sm:flex-row sm:justify-between">
           <div>
@@ -19,7 +19,7 @@ export function Footer() {
 
           <div className="grid grid-cols-2 gap-8 sm:flex sm:gap-16">
             <div>
-              <p className="font-display text-sm font-bold text-sun-300">使う</p>
+              <p className="font-display text-sm font-bold text-orange-500">使う</p>
               <ul className="mt-3 space-y-2 text-sm text-cream/70">
                 <li><Link to="/" className="hover:text-white">今日・今週末の活動</Link></li>
                 <li><Link to="/calendar" className="hover:text-white">カレンダー</Link></li>
@@ -28,7 +28,7 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <p className="font-display text-sm font-bold text-sun-300">発信する</p>
+              <p className="font-display text-sm font-bold text-orange-500">発信する</p>
               <ul className="mt-3 space-y-2 text-sm text-cream/70">
                 <li><Link to="/post" className="hover:text-white">活動を投稿する</Link></li>
                 <li><Link to="/mypage" className="hover:text-white">主催者マイページ</Link></li>
