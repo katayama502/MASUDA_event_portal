@@ -8,7 +8,7 @@ export function EmptyState({
   description?: string;
 }) {
   return (
-    <div className="flex flex-col items-center justify-center gap-2 rounded-3xl border-2 border-dashed border-orange-200 bg-orange-50/50 px-6 py-14 text-center">
+    <div className="flex flex-col items-center justify-center gap-2 rounded-3xl border-2 border-dashed border-brand-200 bg-brand-50/50 px-6 py-14 text-center">
       <span className="text-4xl" aria-hidden>
         {emoji}
       </span>

@@ -49,16 +49,16 @@ export function NavDrawer({ open, onClose, links, extraLinks = [] }: NavDrawerPr
         type="button"
         aria-label="メニューを閉じる"
         onClick={onClose}
-        className="animate-scrim-in absolute inset-0 bg-obsidian/60 backdrop-blur-sm"
+        className="animate-scrim-in absolute inset-0 bg-obsidian/40"
       />
       <div
         role="dialog"
         aria-modal="true"
         aria-label="ナビゲーションメニュー"
-        className="animate-drawer-in absolute right-0 top-0 flex h-full w-[82%] max-w-xs flex-col border-l-2 border-obsidian bg-obsidian text-cream shadow-2xl"
+        className="animate-drawer-in absolute right-0 top-0 flex h-full w-[82%] max-w-xs flex-col bg-cream text-ink shadow-2xl"
       >
-        <div className="flex items-center justify-between border-b border-white/15 px-5 py-5">
-          <span className="flex items-center gap-2 font-display text-sm font-bold tracking-wide text-orange-500">
+        <div className="flex items-center justify-between bg-teal-500 px-5 py-5 text-ink">
+          <span className="flex items-center gap-2 font-display text-sm font-bold tracking-wide">
             <DrawerIcon />
             メニュー
           </span>
@@ -66,7 +66,7 @@ export function NavDrawer({ open, onClose, links, extraLinks = [] }: NavDrawerPr
             type="button"
             onClick={onClose}
             aria-label="メニューを閉じる"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-cream hover:bg-white/10"
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-white/40 hover:bg-white/70"
           >
             ✕
           </button>
@@ -81,7 +81,7 @@ export function NavDrawer({ open, onClose, links, extraLinks = [] }: NavDrawerPr
               onClick={onClose}
               className={({ isActive }) =>
                 `rounded-xl px-4 py-3 font-display text-base font-bold transition-colors ${
-                  isActive ? "bg-orange-500 text-white" : "text-cream/90 hover:bg-white/10"
+                  isActive ? "bg-brand-500 text-white" : "text-ink hover:bg-cream-deep"
                 }`
               }
             >
@@ -90,13 +90,13 @@ export function NavDrawer({ open, onClose, links, extraLinks = [] }: NavDrawerPr
           ))}
 
           {extraLinks.length > 0 && (
-            <div className="mt-3 flex flex-col gap-1 border-t border-white/15 pt-3">
+            <div className="mt-3 flex flex-col gap-1 border-t border-ink/10 pt-3">
               {extraLinks.map((link) => (
                 <NavLink
                   key={link.to}
                   to={link.to}
                   onClick={onClose}
-                  className="rounded-xl px-4 py-3 text-sm font-medium text-cream/70 hover:bg-white/10"
+                  className="rounded-xl px-4 py-3 text-sm font-medium text-ink-soft hover:bg-cream-deep"
                 >
                   {link.label}
                 </NavLink>
@@ -105,7 +105,7 @@ export function NavDrawer({ open, onClose, links, extraLinks = [] }: NavDrawerPr
           )}
         </nav>
 
-        <div className="border-t border-white/15 px-5 py-4 text-xs text-cream/50">
+        <div className="border-t border-ink/10 px-5 py-4 text-xs text-ink-soft">
           ますだ日和 ・ 益田市地域活動ポータル
         </div>
       </div>

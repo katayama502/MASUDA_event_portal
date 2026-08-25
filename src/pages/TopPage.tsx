@@ -49,12 +49,12 @@ export function TopPage() {
 
   return (
     <div className="pb-10">
-      <section className="relative overflow-hidden border-b-4 border-obsidian bg-paper pb-12 pt-10 sm:pb-16 sm:pt-14">
+      <section className="relative overflow-hidden bg-paper pb-12 pt-10 sm:pb-16 sm:pt-14">
         <div className="relative mx-auto max-w-6xl px-4">
-          <span className="inline-flex items-center gap-1.5 rounded-full border-2 border-obsidian bg-orange-500 px-4 py-1.5 font-display text-xs font-bold text-white sm:text-sm">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-500 px-4 py-1.5 font-display text-xs font-bold text-white sm:text-sm">
             #ますだ日和
           </span>
-          <h1 className="mt-4 max-w-xl font-display text-3xl leading-tight text-obsidian sm:text-5xl">
+          <h1 className="mt-4 max-w-xl font-display text-3xl font-black leading-tight text-obsidian sm:text-5xl">
             益田で「今日・今週末・これから」
             <br />
             なにがあるかは、ここでわかる。
@@ -65,13 +65,13 @@ export function TopPage() {
           <div className="mt-7 flex flex-wrap gap-3">
             <Link
               to="/post"
-              className="pop-pressable rounded-full border-2 border-obsidian bg-orange-500 px-5 py-2.5 font-display text-sm font-bold text-white shadow-pop"
+              className="pop-pressable rounded-full bg-brand-500 px-5 py-2.5 font-display text-sm font-bold text-white shadow-pop"
             >
               ＋ 自分の活動を投稿する
             </Link>
             <Link
               to="/continuous"
-              className="pop-pressable rounded-full border-2 border-obsidian bg-white px-5 py-2.5 font-display text-sm font-bold text-obsidian shadow-pop"
+              className="pop-pressable rounded-full bg-teal-500 px-5 py-2.5 font-display text-sm font-bold text-ink shadow-pop"
             >
               継続活動を見る
             </Link>
@@ -79,16 +79,16 @@ export function TopPage() {
         </div>
       </section>
 
-      <div className="border-b-4 border-obsidian bg-obsidian text-cream">
+      <div className="bg-teal-500 text-ink">
         <Marquee text="#ますだ日和 ・ MASUDA HIYORI ・ 益田市地域活動ポータル" />
       </div>
 
-      <div className="border-b-4 border-obsidian bg-obsidian py-8 text-cream">
+      <div className="bg-salmon-100 py-8 text-ink">
         <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 px-4 sm:grid-cols-4">
           {stats.map((s) => (
             <div key={s.label} className="text-center">
-              <p className="font-display text-3xl text-orange-500 sm:text-4xl">{s.value}</p>
-              <p className="mt-1 text-xs font-medium text-cream/70 sm:text-sm">{s.label}</p>
+              <p className="font-display text-3xl font-black text-brand-600 sm:text-4xl">{s.value}</p>
+              <p className="mt-1 text-xs font-medium text-ink-soft sm:text-sm">{s.label}</p>
             </div>
           ))}
         </div>
@@ -114,7 +114,7 @@ export function TopPage() {
             eyebrow="Regular"
             title="今週の定例活動"
             action={
-              <Link to="/continuous" className="text-sm font-bold text-orange-600 hover:underline">
+              <Link to="/continuous" className="text-sm font-bold text-brand-600 hover:underline">
                 すべて見る →
               </Link>
             }

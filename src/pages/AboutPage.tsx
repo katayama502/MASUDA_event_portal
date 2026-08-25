@@ -7,7 +7,7 @@ const VALUES = [
 export function AboutPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 pb-16 pt-6">
-      <p className="text-xs font-bold uppercase tracking-wide text-orange-500">About</p>
+      <p className="text-xs font-bold uppercase tracking-wide text-brand-500">About</p>
       <h1 className="mt-1 font-display text-2xl font-black text-ink sm:text-3xl">運営について</h1>
 
       <p className="mt-4 text-sm leading-relaxed text-ink-soft">
@@ -19,7 +19,7 @@ export function AboutPage() {
 
       <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
         {VALUES.map((v) => (
-          <div key={v.title} className="rounded-2xl bg-paper p-4 border-2 border-obsidian shadow-pop-sm">
+          <div key={v.title} className="rounded-2xl bg-paper p-4 shadow-pop-sm">
             <span className="text-2xl">{v.icon}</span>
             <p className="mt-2 font-display text-sm font-bold text-ink">{v.title}</p>
             <p className="mt-1 text-sm text-ink-soft">{v.body}</p>
@@ -27,12 +27,12 @@ export function AboutPage() {
         ))}
       </div>
 
-      <div className="mt-10 rounded-2xl bg-orange-50 p-6">
+      <div className="mt-10 rounded-2xl bg-brand-50 p-6">
         <h2 className="font-display text-base font-bold text-ink">お問い合わせ</h2>
         <p className="mt-2 text-sm text-ink-soft">
           掲載内容の修正依頼、地域の団体・店舗の紹介、連携についてのご相談など、お気軽にお問い合わせください。
         </p>
-        <p className="mt-3 text-sm font-medium text-orange-700">✉️ info@masuda-hiyori.example.jp（プロトタイプ用ダミー）</p>
+        <p className="mt-3 text-sm font-medium text-brand-700">✉️ info@masuda-hiyori.example.jp（プロトタイプ用ダミー）</p>
       </div>
 
       <p className="mt-10 text-xs text-ink-soft">

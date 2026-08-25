@@ -44,12 +44,12 @@ export function CalendarPage() {
     <div className="mx-auto max-w-5xl px-4 pb-10 pt-6 sm:pt-10">
       <SectionHeading eyebrow="Calendar" title="月間カレンダー" />
 
-      <div className="rounded-3xl border-2 border-obsidian bg-paper p-4 shadow-pop-sm sm:p-6">
+      <div className="rounded-3xl bg-paper p-4 shadow-pop-sm sm:p-6">
         <div className="mb-4 flex items-center justify-between">
           <button
             type="button"
             onClick={() => setCursor(new Date(cursor.getFullYear(), cursor.getMonth() - 1, 1))}
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-orange-50 text-orange-600 hover:bg-orange-100"
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-50 text-brand-600 hover:bg-brand-100"
             aria-label="前の月"
           >
             ‹
@@ -60,7 +60,7 @@ export function CalendarPage() {
           <button
             type="button"
             onClick={() => setCursor(new Date(cursor.getFullYear(), cursor.getMonth() + 1, 1))}
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-orange-50 text-orange-600 hover:bg-orange-100"
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-50 text-brand-600 hover:bg-brand-100"
             aria-label="次の月"
           >
             ›
@@ -89,13 +89,13 @@ export function CalendarPage() {
                 onClick={() => setSelectedKey(key)}
                 className={`flex min-h-16 flex-col items-center gap-1 rounded-xl border p-1.5 text-left transition-colors sm:min-h-20 ${
                   isSelected
-                    ? "border-orange-400 bg-orange-50"
-                    : "border-transparent hover:bg-orange-50/60"
+                    ? "border-brand-400 bg-brand-50"
+                    : "border-transparent hover:bg-brand-50/60"
                 } ${!inMonth ? "opacity-40" : ""}`}
               >
                 <span
                   className={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${
-                    isToday ? "bg-orange-500 text-white" : "text-ink"
+                    isToday ? "bg-brand-500 text-white" : "text-ink"
                   }`}
                 >
                   {day.getDate()}
@@ -128,7 +128,7 @@ export function CalendarPage() {
                 <li key={`${o.event.id}-${i}`}>
                   <Link
                     to={`/events/${o.event.id}`}
-                    className="flex items-center gap-3 rounded-2xl bg-paper p-3 border-2 border-obsidian shadow-pop-sm hover:shadow-pop"
+                    className="flex items-center gap-3 rounded-2xl bg-paper p-3 shadow-pop-sm hover:shadow-pop"
                   >
                     <span
                       className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-2xl"

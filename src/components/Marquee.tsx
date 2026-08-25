@@ -13,7 +13,7 @@ export function Marquee({ text, className = "" }: MarqueeProps) {
             {items.map((_, i) => (
               <span key={i} className="flex items-center gap-6 font-display text-sm tracking-wide">
                 {text}
-                <span aria-hidden className="text-orange-500">✦</span>
+                <span aria-hidden className="text-brand-500">✦</span>
               </span>
             ))}
           </div>

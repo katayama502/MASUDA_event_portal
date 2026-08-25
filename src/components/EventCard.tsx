@@ -16,7 +16,7 @@ export function EventCard({ event }: { event: EventItem }) {
   return (
     <Link
       to={`/events/${event.id}`}
-      className="group flex flex-col overflow-hidden rounded-3xl border-2 border-obsidian bg-paper shadow-pop-sm transition-all hover:-translate-y-1 hover:shadow-pop"
+      className="group flex flex-col overflow-hidden rounded-3xl bg-paper shadow-pop-sm transition-all hover:-translate-y-1 hover:shadow-pop"
     >
       <div
         className="relative flex h-36 items-center justify-center overflow-hidden text-5xl"
@@ -38,12 +38,12 @@ export function EventCard({ event }: { event: EventItem }) {
           <FavoriteButton eventId={event.id} />
         </div>
         {event.type === "継続" && (
-          <span className="absolute left-3 top-3 rounded-full border-2 border-obsidian bg-white px-2.5 py-1 text-xs font-bold text-obsidian">
+          <span className="absolute left-3 top-3 rounded-full bg-white px-2.5 py-1 text-xs font-bold text-obsidian">
             継続活動
           </span>
         )}
         {relLabel && (
-          <span className="absolute bottom-3 left-3 rounded-full border-2 border-obsidian bg-orange-500 px-2.5 py-1 text-xs font-bold text-white">
+          <span className="absolute bottom-3 left-3 rounded-full bg-brand-500 px-2.5 py-1 text-xs font-bold text-white">
             {relLabel}
           </span>
         )}
@@ -53,10 +53,10 @@ export function EventCard({ event }: { event: EventItem }) {
           <CategoryBadge category={event.category} />
           <span className="text-xs text-ink-soft">{event.area}地区</span>
         </div>
-        <h3 className="font-display text-base font-bold leading-snug text-ink group-hover:text-orange-600">
+        <h3 className="font-display text-base font-bold leading-snug text-ink group-hover:text-brand-600">
           {event.title}
         </h3>
-        <p className="text-sm font-medium text-orange-700">
+        <p className="text-sm font-medium text-brand-700">
           {event.type === "継続" && event.recurrenceRule ? `${event.recurrenceRule} ・ ` : ""}
           {formatDateTimeRangeJp(event.startDateTime, event.endDateTime)}
         </p>

@@ -15,7 +15,7 @@ const ORGANIZER_STEPS = [
 export function GuidePage() {
   return (
     <div className="mx-auto max-w-3xl px-4 pb-16 pt-6">
-      <p className="text-xs font-bold uppercase tracking-wide text-orange-500">Guide</p>
+      <p className="text-xs font-bold uppercase tracking-wide text-brand-500">Guide</p>
       <h1 className="mt-1 font-display text-2xl font-black text-ink sm:text-3xl">使い方ガイド</h1>
       <p className="mt-3 text-sm text-ink-soft">
         「ますだ日和」は、益田の活動を探す住民の方と、活動を発信したい主催者の方、それぞれにとってできるだけシンプルであることを目指しています。
@@ -25,9 +25,9 @@ export function GuidePage() {
         <h2 className="font-display text-lg font-black text-ink">住民の方へ：活動を探す</h2>
         <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {RESIDENT_STEPS.map((step, i) => (
-            <div key={step.title} className="rounded-2xl border-2 border-obsidian bg-paper p-4">
+            <div key={step.title} className="rounded-2xl bg-salmon-100 p-4">
               <div className="flex items-center gap-2">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-100 text-sm font-bold text-orange-700">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-500 text-sm font-bold text-white">
                   {i + 1}
                 </span>
                 <span className="text-xl">{step.icon}</span>
@@ -39,7 +39,7 @@ export function GuidePage() {
         </div>
         <Link
           to="/"
-          className="pop-pressable mt-4 inline-block rounded-full border-2 border-obsidian bg-orange-500 px-5 py-2.5 text-sm font-bold text-white shadow-pop-sm"
+          className="pop-pressable mt-4 inline-block rounded-full bg-brand-500 px-5 py-2.5 text-sm font-bold text-white shadow-pop-sm"
         >
           活動をさがしに行く →
         </Link>
@@ -49,20 +49,20 @@ export function GuidePage() {
         <h2 className="font-display text-lg font-black text-ink">主催者の方へ：活動を投稿する</h2>
         <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {ORGANIZER_STEPS.map((step, i) => (
-            <div key={step.title} className="rounded-2xl border-2 border-obsidian bg-obsidian p-4 text-cream">
+            <div key={step.title} className="rounded-2xl bg-lime-100 p-4">
               <div className="flex items-center gap-2">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-500 text-sm font-bold text-white">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-lime-500 text-sm font-bold text-ink">
                   {i + 1}
                 </span>
                 <span className="text-xl">{step.icon}</span>
               </div>
-              <p className="mt-2 font-display text-sm font-bold text-cream">{step.title}</p>
-              <p className="mt-1 text-sm text-cream/70">{step.body}</p>
+              <p className="mt-2 font-display text-sm font-bold text-ink">{step.title}</p>
+              <p className="mt-1 text-sm text-ink-soft">{step.body}</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-6 rounded-2xl border-2 border-dashed border-orange-300 bg-orange-50/60 p-5">
+        <div className="mt-6 rounded-2xl border-2 border-dashed border-brand-300 bg-brand-50/60 p-5">
           <p className="font-display text-sm font-bold text-ink">投稿するときのちょっとしたコツ</p>
           <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm text-ink-soft">
             <li>タイトルは「何をするか」がひと目でわかる言葉にしましょう（例: 「かご編み体験」より「竹かご編み体験ワークショップ」）</li>
@@ -74,7 +74,7 @@ export function GuidePage() {
 
         <Link
           to="/post"
-          className="pop-pressable mt-4 inline-block rounded-full border-2 border-obsidian bg-orange-500 px-5 py-2.5 text-sm font-bold text-white shadow-pop-sm"
+          className="pop-pressable mt-4 inline-block rounded-full bg-brand-500 px-5 py-2.5 text-sm font-bold text-white shadow-pop-sm"
         >
           活動を投稿する →
         </Link>

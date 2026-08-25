@@ -40,7 +40,7 @@ export function EventDetailPage() {
     return (
       <div className="mx-auto max-w-3xl px-4 py-16 text-center">
         <p className="font-display text-lg font-bold text-ink">この活動は見つかりませんでした</p>
-        <Link to="/" className="mt-4 inline-block text-orange-600 hover:underline">
+        <Link to="/" className="mt-4 inline-block text-brand-600 hover:underline">
           トップに戻る
         </Link>
       </div>
@@ -58,12 +58,12 @@ export function EventDetailPage() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 pb-16 pt-6">
-      <Link to="/" className="text-sm font-medium text-ink-soft hover:text-orange-600">
+      <Link to="/" className="text-sm font-medium text-ink-soft hover:text-brand-600">
         ← 一覧に戻る
       </Link>
 
       <div
-        className="relative mt-4 flex h-56 items-center justify-center overflow-hidden rounded-3xl border-2 border-obsidian text-7xl shadow-pop sm:h-72"
+        className="relative mt-4 flex h-56 items-center justify-center overflow-hidden rounded-3xl text-7xl shadow-pop sm:h-72"
         style={{ backgroundColor: event.imageColor }}
       >
         {event.imageUrl && !imgFailed ? (
@@ -82,7 +82,7 @@ export function EventDetailPage() {
           <FavoriteButton eventId={event.id} />
         </div>
         {event.type === "継続" && (
-          <span className="absolute left-4 top-4 rounded-full border-2 border-obsidian bg-white px-3 py-1.5 text-sm font-bold text-obsidian">
+          <span className="absolute left-4 top-4 rounded-full bg-white px-3 py-1.5 text-sm font-bold text-obsidian">
             継続活動
           </span>
         )}
@@ -95,7 +95,7 @@ export function EventDetailPage() {
 
       <h1 className="mt-3 font-display text-2xl font-black leading-snug text-ink sm:text-3xl">{event.title}</h1>
 
-      <div className="mt-5 grid grid-cols-1 gap-3 rounded-3xl border-2 border-obsidian bg-orange-50 p-5 sm:grid-cols-2">
+      <div className="mt-5 grid grid-cols-1 gap-3 rounded-3xl bg-brand-50 p-5 sm:grid-cols-2">
         <InfoRow icon="🗓️" label="日時" value={formatDateTimeRangeJp(event.startDateTime, event.endDateTime)} />
         {event.recurrenceRule && <InfoRow icon="🔁" label="開催頻度" value={event.recurrenceRule} />}
         <InfoRow icon="📍" label="場所" value={`${event.locationName}（${event.locationAddress}）`} />
@@ -113,7 +113,7 @@ export function EventDetailPage() {
       {organizer && (
         <Link
           to={`/organizers/${organizer.id}`}
-          className="mt-6 flex items-center gap-3 rounded-2xl border-2 border-obsidian bg-paper p-4 shadow-pop-sm hover:shadow-pop"
+          className="mt-6 flex items-center gap-3 rounded-2xl bg-paper p-4 shadow-pop-sm hover:shadow-pop"
         >
           <span
             className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-2xl"
@@ -124,7 +124,7 @@ export function EventDetailPage() {
           <div className="min-w-0 flex-1">
             <p className="flex items-center gap-1 font-display text-sm font-bold text-ink">
               {organizer.name}
-              {organizer.verified && <span className="text-xs text-orange-500" title="運営確認済み">✔️</span>}
+              {organizer.verified && <span className="text-xs text-brand-500" title="運営確認済み">✔️</span>}
             </p>
             <p className="line-clamp-1 text-xs text-ink-soft">主催者ページを見る →</p>
           </div>
@@ -141,21 +141,21 @@ export function EventDetailPage() {
               navigator.clipboard.writeText(shareUrl);
             }
           }}
-          className="rounded-full border-2 border-obsidian bg-obsidian px-4 py-2 text-sm font-bold text-white hover:bg-obsidian-soft"
+          className="rounded-full bg-brand-500 px-4 py-2 text-sm font-bold text-white hover:bg-brand-600"
         >
           🔗 シェアする
         </button>
         <button
           type="button"
           onClick={() => setReportOpen((v) => !v)}
-          className="rounded-full border-2 border-obsidian px-4 py-2 text-sm font-medium text-ink-soft hover:bg-orange-50"
+          className="rounded-full px-4 py-2 text-sm font-medium text-ink-soft hover:bg-brand-50"
         >
           ⚠️ 情報の誤りを報告する
         </button>
       </div>
 
       {reportOpen && (
-        <div className="mt-4 rounded-2xl border-2 border-obsidian bg-orange-50 p-4">
+        <div className="mt-4 rounded-2xl bg-brand-50 p-4">
           {reportSent ? (
             <p className="text-sm font-bold text-obsidian">
               ご報告ありがとうございます。運営が内容を確認します。
@@ -170,14 +170,14 @@ export function EventDetailPage() {
                 value={reportReason}
                 onChange={(e) => setReportReason(e.target.value)}
                 rows={3}
-                className="mt-2 w-full rounded-xl border border-orange-200 bg-white p-3 text-sm outline-none focus:border-orange-400"
+                className="mt-2 w-full rounded-xl border border-brand-200 bg-white p-3 text-sm outline-none focus:border-brand-400"
                 placeholder="例: 開催時間が終了しているイベントが掲載されています"
               />
               <button
                 type="button"
                 onClick={submitReport}
                 disabled={!reportReason.trim()}
-                className="mt-2 rounded-full bg-orange-500 px-4 py-2 text-sm font-bold text-white disabled:opacity-40"
+                className="mt-2 rounded-full bg-brand-500 px-4 py-2 text-sm font-bold text-white disabled:opacity-40"
               >
                 この内容で報告する
               </button>
@@ -207,7 +207,7 @@ function InfoRow({ icon, label, value }: { icon: string; label: string; value: s
         {icon}
       </span>
       <div>
-        <p className="text-xs font-bold text-orange-600">{label}</p>
+        <p className="text-xs font-bold text-brand-600">{label}</p>
         <p className="text-sm text-ink">{value}</p>
       </div>
     </div>

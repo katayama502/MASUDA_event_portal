@@ -31,34 +31,34 @@ export function AdminDashboardPage() {
 
   return (
     <div className="mx-auto max-w-5xl px-4 pb-20 pt-6">
-      <div className="rounded-2xl border-2 border-obsidian bg-obsidian px-5 py-4 text-white shadow-pop">
-        <p className="text-xs font-bold uppercase tracking-wide text-orange-500">Admin (デモ)</p>
-        <h1 className="mt-0.5 font-display text-xl">運営管理画面</h1>
-        <p className="mt-1 text-xs text-white/70">
+      <div className="rounded-2xl bg-brand-500 px-5 py-4 text-white shadow-pop">
+        <p className="text-xs font-bold uppercase tracking-wide text-brand-100">Admin (デモ)</p>
+        <h1 className="mt-0.5 font-display text-xl font-black">運営管理画面</h1>
+        <p className="mt-1 text-xs text-white/80">
           本来はadminロールのみアクセスできる非公開画面です。本プロトタイプでは動作確認のため誰でも閲覧できます。
         </p>
       </div>
 
       <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <StatPill label="承認待ち" value={pending.length} accent="border-2 border-obsidian bg-orange-100 text-orange-700" />
-        <StatPill label="掲載中" value={published.length} accent="border-2 border-obsidian bg-white text-obsidian" />
-        <StatPill label="主催者数" value={organizers.length} accent="border-2 border-obsidian bg-white text-obsidian" />
-        <StatPill label="未対応の通報" value={openReports.length} accent="border-2 border-obsidian bg-red-500 text-white" />
+        <StatPill label="承認待ち" value={pending.length} accent="bg-salmon-100 text-ink" />
+        <StatPill label="掲載中" value={published.length} accent="bg-white text-ink shadow-warm-sm" />
+        <StatPill label="主催者数" value={organizers.length} accent="bg-white text-ink shadow-warm-sm" />
+        <StatPill label="未対応の通報" value={openReports.length} accent="bg-alert-500 text-white" />
       </div>
 
-      <div className="no-scrollbar mt-6 flex gap-2 overflow-x-auto border-b border-orange-100">
+      <div className="no-scrollbar mt-6 flex gap-2 overflow-x-auto border-b border-brand-100">
         {TABS.map((t) => (
           <button
             key={t.key}
             type="button"
             onClick={() => setTab(t.key)}
             className={`shrink-0 border-b-2 px-3.5 py-2.5 text-sm font-bold transition-colors ${
-              tab === t.key ? "border-orange-500 text-orange-600" : "border-transparent text-ink-soft hover:text-ink"
+              tab === t.key ? "border-brand-500 text-brand-600" : "border-transparent text-ink-soft hover:text-ink"
             }`}
           >
             {t.label}
             {t.key === "pending" && pending.length > 0 && (
-              <span className="ml-1.5 rounded-full bg-orange-500 px-1.5 py-0.5 text-[10px] text-white">{pending.length}</span>
+              <span className="ml-1.5 rounded-full bg-brand-500 px-1.5 py-0.5 text-[10px] text-white">{pending.length}</span>
             )}
           </button>
         ))}
@@ -73,14 +73,14 @@ export function AdminDashboardPage() {
               {pending.map((event) => {
                 const organizer = getOrganizer(event.organizerId);
                 return (
-                  <li key={event.id} className="rounded-2xl bg-paper p-4 border-2 border-obsidian shadow-pop-sm">
+                  <li key={event.id} className="rounded-2xl bg-paper p-4 shadow-pop-sm">
                     <div className="flex items-start justify-between gap-3">
                       <div className="min-w-0">
                         <div className="flex flex-wrap items-center gap-2">
                           <CategoryBadge category={event.category} />
                           <span className="text-xs text-ink-soft">{event.area}地区・{event.type}</span>
                         </div>
-                        <Link to={`/events/${event.id}`} className="mt-1.5 block font-display text-sm font-bold text-ink hover:text-orange-600">
+                        <Link to={`/events/${event.id}`} className="mt-1.5 block font-display text-sm font-bold text-ink hover:text-brand-600">
                           {event.title}
                         </Link>
                         <p className="mt-1 text-xs text-ink-soft">
@@ -153,11 +153,11 @@ export function AdminDashboardPage() {
               {published.map((event) => (
                 <li
                   key={event.id}
-                  className="flex flex-wrap items-center justify-between gap-2 rounded-xl bg-paper p-3 border-2 border-obsidian shadow-pop-sm"
+                  className="flex flex-wrap items-center justify-between gap-2 rounded-xl bg-paper p-3 shadow-pop-sm"
                 >
                   <div className="flex min-w-0 items-center gap-2">
                     <CategoryBadge category={event.category} />
-                    <Link to={`/events/${event.id}`} className="truncate text-sm font-bold text-ink hover:text-orange-600">
+                    <Link to={`/events/${event.id}`} className="truncate text-sm font-bold text-ink hover:text-brand-600">
                       {event.title}
                     </Link>
                     <span className="shrink-0 text-xs text-ink-soft">{event.area}地区</span>
@@ -177,7 +177,7 @@ export function AdminDashboardPage() {
               {published.map((event) => (
                 <li
                   key={event.id}
-                  className="flex flex-wrap items-center justify-between gap-2 rounded-xl bg-paper p-3 border-2 border-obsidian shadow-pop-sm"
+                  className="flex flex-wrap items-center justify-between gap-2 rounded-xl bg-paper p-3 shadow-pop-sm"
                 >
                   <div className="flex min-w-0 items-center gap-2">
                     <CategoryBadge category={event.category} />
@@ -187,7 +187,7 @@ export function AdminDashboardPage() {
                     type="button"
                     onClick={() => toggleFeatured(event.id)}
                     className={`shrink-0 rounded-full px-3.5 py-1.5 text-xs font-bold transition-colors ${
-                      event.featured ? "bg-sun-500 text-white" : "border border-orange-200 text-ink-soft hover:bg-orange-50"
+                      event.featured ? "bg-sun-500 text-white" : "border border-brand-200 text-ink-soft hover:bg-brand-50"
                     }`}
                   >
                     {event.featured ? "★ ピックアップ中" : "☆ ピックアップにする"}

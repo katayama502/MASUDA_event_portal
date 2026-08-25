@@ -28,7 +28,7 @@ export function FilterBar({
           value={keyword}
           onChange={(e) => onKeywordChange(e.target.value)}
           placeholder="キーワードで探す（例: マルシェ、子ども、匹見）"
-          className="w-full rounded-2xl border-2 border-obsidian bg-white py-3 pl-11 pr-4 text-sm text-ink outline-none placeholder:text-ink-soft/70 focus:ring-2 focus:ring-orange-300"
+          className="w-full rounded-2xl bg-white py-3 pl-11 pr-4 text-sm text-ink shadow-warm-sm outline-none placeholder:text-ink-soft/70 focus:ring-2 focus:ring-brand-300"
         />
       </div>
 
@@ -36,7 +36,7 @@ export function FilterBar({
         <select
           value={area ?? ""}
           onChange={(e) => onAreaChange((e.target.value || null) as Area | null)}
-          className="shrink-0 rounded-full border-2 border-obsidian bg-white px-3.5 py-2 text-sm font-medium text-ink outline-none focus:ring-2 focus:ring-orange-300"
+          className="shrink-0 rounded-full bg-white px-3.5 py-2 text-sm font-medium text-ink shadow-warm-sm outline-none focus:ring-2 focus:ring-brand-300"
         >
           <option value="">全地区</option>
           {AREAS.map((a) => (
@@ -49,7 +49,7 @@ export function FilterBar({
         <button
           type="button"
           onClick={() => onCategoryChange(null)}
-          className={`shrink-0 rounded-full border-2 border-obsidian px-3.5 py-2 text-sm font-medium transition-colors ${
+          className={`shrink-0 rounded-full px-3.5 py-2 text-sm font-medium transition-colors ${
             category === null ? "bg-obsidian text-white" : "bg-white text-ink-soft hover:bg-cream-deep"
           }`}
         >
@@ -63,7 +63,7 @@ export function FilterBar({
               key={c}
               type="button"
               onClick={() => onCategoryChange(active ? null : c)}
-              className={`shrink-0 rounded-full border-2 border-obsidian px-3.5 py-2 text-sm font-medium transition-colors ${
+              className={`shrink-0 rounded-full px-3.5 py-2 text-sm font-medium transition-colors ${
                 active ? "bg-obsidian text-white" : `${style.bg} ${style.text} hover:bg-cream-deep`
               }`}
             >

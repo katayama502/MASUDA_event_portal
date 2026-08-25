@@ -23,7 +23,7 @@ export function OrganizerPage() {
     return (
       <div className="mx-auto max-w-3xl px-4 py-16 text-center">
         <p className="font-display text-lg font-bold text-ink">主催者ページが見つかりませんでした</p>
-        <Link to="/" className="mt-4 inline-block text-orange-600 hover:underline">
+        <Link to="/" className="mt-4 inline-block text-brand-600 hover:underline">
           トップに戻る
         </Link>
       </div>
@@ -37,7 +37,7 @@ export function OrganizerPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-4 pb-16 pt-6">
-      <section className="rounded-[2rem] bg-paper p-6 border-2 border-obsidian shadow-pop-sm sm:p-8">
+      <section className="rounded-[2rem] bg-paper p-6 shadow-pop-sm sm:p-8">
         <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
           <span
             className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full text-4xl shadow-warm-sm"
@@ -49,7 +49,7 @@ export function OrganizerPage() {
             <h1 className="flex flex-wrap items-center gap-2 font-display text-2xl font-black text-ink">
               {organizer.name}
               {organizer.verified && (
-                <span className="rounded-full bg-orange-100 px-2.5 py-1 text-xs font-bold text-orange-700">
+                <span className="rounded-full bg-brand-100 px-2.5 py-1 text-xs font-bold text-brand-700">
                   ✔️ 運営確認済み
                 </span>
               )}
@@ -66,7 +66,7 @@ export function OrganizerPage() {
                 href={url}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="rounded-full bg-orange-50 px-3.5 py-2 text-sm font-medium text-orange-700 hover:bg-orange-100"
+                className="rounded-full bg-brand-50 px-3.5 py-2 text-sm font-medium text-brand-700 hover:bg-brand-100"
               >
                 {SNS_LABEL[key] ?? key}
               </a>
@@ -74,7 +74,7 @@ export function OrganizerPage() {
             {organizer.contactPublic && organizer.contactEmail && (
               <a
                 href={`mailto:${organizer.contactEmail}`}
-                className="rounded-full bg-orange-50 px-3.5 py-2 text-sm font-medium text-orange-700 hover:bg-orange-100"
+                className="rounded-full bg-brand-50 px-3.5 py-2 text-sm font-medium text-brand-700 hover:bg-brand-100"
               >
                 ✉️ お問い合わせ
               </a>

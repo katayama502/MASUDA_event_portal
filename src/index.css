@@ -1,20 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  /* 「#ヒキダシ」を参考に、手書きマーカー風の見出しフォント＋クリーンな明朝寄らずのゴシック本文という
-     コントラストの効いた組み合わせに変更。配色も黒白を基調に、オレンジ1色だけをブランドアクセントとして残す。 */
-  --font-display: "Yusei Magic", "Noto Sans JP", sans-serif;
-  --font-body: "Noto Sans JP", "Yusei Magic", sans-serif;
+  /* 「#ヒキダシ」(hikidashi-ehime.jp) の実サイトから取得した値に合わせた配色・書体。
+     本文・見出しとも同サイトと同じNoto Sans JP。ロゴの手描き文字やキャラクターイラストなど
+     同サイト固有の著作物は複製せず、色・書体・余白・角丸・シャドウの弱さといった
+     「デザインの仕組み」だけを忠実に再現している。 */
+  --font-display: "Noto Sans JP", sans-serif;
+  --font-body: "Noto Sans JP", sans-serif;
 
-  --color-cream: #fdfbf7;
-  --color-cream-deep: #f3efe7;
+  --color-cream: #fff8ed;
+  --color-cream-deep: #ffeedb;
   --color-paper: #ffffff;
 
-  --color-ink: #3a2e28;
-  --color-ink-soft: #6b5c52;
+  --color-ink: #262626;
+  --color-ink-soft: #6b6b6b;
 
-  --color-obsidian: #111111;
-  --color-obsidian-soft: #262626;
+  --color-obsidian: #262626;
+  --color-obsidian-soft: #454545;
 
   --color-orange-50: #fef3ec;
   --color-orange-100: #fce2cd;
@@ -35,20 +37,41 @@
   --color-sky-100: #e3eef1;
   --color-sky-500: #6ba3ae;
 
-  --color-teal-100: #dcedee;
-  --color-teal-300: #a8d3d4;
-  --color-teal-500: #7cb8ba;
-  --color-teal-700: #3f7375;
+  /* ヒキダシのボタン色 rgb(136,195,197) をそのまま採用したミント */
+  --color-teal-100: #eaf5f5;
+  --color-teal-300: #bfe0e1;
+  --color-teal-500: #88c3c5;
+  --color-teal-700: #3f6f70;
 
-  --color-lime-100: #eaf1d5;
-  --color-lime-300: #cddb9b;
-  --color-lime-500: #a8c05f;
+  /* ヒキダシの記事セクション背景 rgb(192,214,123) をそのまま採用したオリーブ */
+  --color-lime-100: #f1f6e2;
+  --color-lime-300: #dbe7ab;
+  --color-lime-500: #c0d67b;
   --color-lime-700: #5f7433;
 
-  --shadow-warm: 0 10px 30px -12px rgba(17, 17, 17, 0.18);
-  --shadow-warm-sm: 0 4px 14px -6px rgba(17, 17, 17, 0.16);
-  --shadow-pop: 5px 5px 0 0 var(--color-obsidian);
-  --shadow-pop-sm: 3px 3px 0 0 var(--color-obsidian);
+  /* ヒキダシの診断セクション背景 rgb(255,218,207) をそのまま採用したサーモンピンク */
+  --color-salmon-100: #fff1ec;
+  --color-salmon-300: #ffdacf;
+  --color-salmon-500: #ffb8a3;
+
+  /* ヒキダシのCSSに実際に定義されているアクセント値: background:#0080f8 / #e74c3c */
+  --color-brand-50: #eaf4ff;
+  --color-brand-100: #d3e9ff;
+  --color-brand-200: #a8d4fc;
+  --color-brand-300: #7ec0fb;
+  --color-brand-400: #3fa3fa;
+  --color-brand-500: #0080f8;
+  --color-brand-600: #0068cc;
+  --color-brand-700: #0052a3;
+
+  --color-alert-500: #e74c3c;
+  --color-alert-600: #c0392b;
+
+  --shadow-warm: 0 10px 24px -14px rgba(38, 38, 38, 0.2);
+  --shadow-warm-sm: 0 4px 12px -6px rgba(38, 38, 38, 0.18);
+  /* ヒキダシは硬いドロップシャドウを使わないため、柔らかい影に統一 */
+  --shadow-pop: 0 10px 24px -12px rgba(38, 38, 38, 0.22);
+  --shadow-pop-sm: 0 4px 12px -6px rgba(38, 38, 38, 0.18);
 }
 
 html {

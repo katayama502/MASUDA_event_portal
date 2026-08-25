@@ -6,14 +6,14 @@ interface CategoryStyle {
   text: string;
 }
 
-// 「#ヒキダシ」に倣い、カテゴリごとの背景色は使わず黒枠＋白地に統一。
-// 見分けはアイコンのみで行う（色に頼らないシンプルな線画スタイル）。
+// 「#ヒキダシ」の実サイトにある2種の淡い色ブロック（サーモンピンク／オリーブ）と
+// ミント・ブランドブルーを合わせたパステル4色を、カテゴリごとに割り当てる。
 export const CATEGORY_STYLE: Record<Category, CategoryStyle> = {
-  "マルシェ・マーケット": { icon: "🧺", bg: "bg-white", text: "text-obsidian" },
-  "ワークショップ・体験": { icon: "🎨", bg: "bg-white", text: "text-obsidian" },
-  "親子・子育て": { icon: "🧸", bg: "bg-white", text: "text-obsidian" },
-  "習い事・教室": { icon: "📚", bg: "bg-white", text: "text-obsidian" },
-  "地域活動・ボランティア": { icon: "🤝", bg: "bg-white", text: "text-obsidian" },
-  "スポーツ大会・体験": { icon: "🏃", bg: "bg-white", text: "text-obsidian" },
-  "その他": { icon: "✨", bg: "bg-white", text: "text-obsidian" },
+  "マルシェ・マーケット": { icon: "🧺", bg: "bg-salmon-100", text: "text-ink" },
+  "ワークショップ・体験": { icon: "🎨", bg: "bg-lime-100", text: "text-ink" },
+  "親子・子育て": { icon: "🧸", bg: "bg-brand-100", text: "text-ink" },
+  "習い事・教室": { icon: "📚", bg: "bg-teal-100", text: "text-ink" },
+  "地域活動・ボランティア": { icon: "🤝", bg: "bg-lime-100", text: "text-ink" },
+  "スポーツ大会・体験": { icon: "🏃", bg: "bg-teal-100", text: "text-ink" },
+  "その他": { icon: "✨", bg: "bg-salmon-100", text: "text-ink" },
 };

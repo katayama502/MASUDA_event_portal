@@ -11,6 +11,27 @@ npm run dev
 
 `npm run build` で本番ビルド、`npm run lint` でLintを実行できます。
 
+## デプロイ
+
+このリポジトリは以下の2箇所にデプロイできる構成になっています（`base: './'` の相対パス構成のため、どちらでも設定変更なしで動作します）。
+
+### Vercel（推奨・最速）
+
+1. [vercel.com/new](https://vercel.com/new) でこのGitHubリポジトリ（`katayama502/MASUDA_event_portal`）をImport
+2. フレームワークは自動的に「Vite」として検出されます（[vercel.json](vercel.json) にビルド設定を明示済み）。設定変更は不要で「Deploy」を押すだけです
+3. 以降は `main` ブランチへのpushで自動的に再デプロイされます
+
+CLIから直接デプロイする場合:
+
+```bash
+npx vercel        # プレビューデプロイ
+npx vercel --prod # 本番デプロイ
+```
+
+### GitHub Pages
+
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) により `main` へのpushで自動ビルド・公開されます。リポジトリの Settings → Pages → Source を「GitHub Actions」に設定してください。公開URLは `https://<ユーザー名>.github.io/MASUDA_event_portal/` です。
+
 ## 技術スタック
 
 - React 19 + TypeScript + Vite

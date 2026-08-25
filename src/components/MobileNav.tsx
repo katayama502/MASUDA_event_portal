@@ -11,7 +11,7 @@ const TABS = [
 export function MobileNav() {
   return (
     <nav
-      className="fixed inset-x-0 bottom-0 z-40 border-t-2 border-obsidian bg-paper/95 backdrop-blur lg:hidden"
+      className="fixed inset-x-0 bottom-0 z-40 bg-paper/95 shadow-warm backdrop-blur lg:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
       <div className="mx-auto grid max-w-lg grid-cols-5">
@@ -22,7 +22,7 @@ export function MobileNav() {
             end={tab.end}
             className={({ isActive }) =>
               `flex flex-col items-center gap-0.5 py-2 text-[11px] font-medium ${
-                isActive ? "text-orange-600" : "text-ink-soft"
+                isActive ? "text-brand-600" : "text-ink-soft"
               }`
             }
           >

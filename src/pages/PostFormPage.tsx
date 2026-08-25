@@ -113,7 +113,7 @@ export function PostFormPage() {
           運営が内容を確認し、通常1〜2営業日以内に掲載されます。掲載までは「承認待ち」の状態としてマイページから確認できます。
         </p>
         <p className="mt-6 text-xs text-ink-soft">まもなく投稿内容のプレビューへ移動します…</p>
-        <Link to="/mypage" className="mt-4 text-sm font-bold text-orange-600 hover:underline">
+        <Link to="/mypage" className="mt-4 text-sm font-bold text-brand-600 hover:underline">
           マイページで確認する →
         </Link>
       </div>
@@ -122,7 +122,7 @@ export function PostFormPage() {
 
   return (
     <div className="mx-auto max-w-2xl px-4 pb-20 pt-6">
-      <p className="text-xs font-bold uppercase tracking-wide text-orange-500">Post</p>
+      <p className="text-xs font-bold uppercase tracking-wide text-brand-500">Post</p>
       <h1 className="mt-1 font-display text-2xl font-black text-ink">活動を投稿する</h1>
       <p className="mt-2 text-sm text-ink-soft">
         アカウント登録は不要です。5分ほどで入力できます。送信後は運営が内容を確認し、通常1〜2営業日以内に掲載されます。
@@ -156,7 +156,7 @@ export function PostFormPage() {
                 type="button"
                 onClick={() => setType(t)}
                 className={`flex-1 rounded-xl border px-4 py-2.5 text-sm font-bold transition-colors ${
-                  type === t ? "border-orange-400 bg-orange-100 text-orange-700" : "border-orange-100 bg-white text-ink-soft"
+                  type === t ? "border-brand-400 bg-brand-100 text-brand-700" : "border-brand-100 bg-white text-ink-soft"
                 }`}
               >
                 {t === "単発" ? "単発イベント" : "継続活動（定例）"}
@@ -256,7 +256,7 @@ export function PostFormPage() {
           />
           {imageUrl.trim() && (
             <div
-              className="mt-2 flex h-28 w-full items-center justify-center overflow-hidden rounded-xl border-2 border-obsidian text-3xl"
+              className="mt-2 flex h-28 w-full items-center justify-center overflow-hidden rounded-xl text-3xl"
               style={{ backgroundColor: color }}
             >
               {imagePreviewFailed ? (
@@ -283,7 +283,7 @@ export function PostFormPage() {
                 type="button"
                 onClick={() => setEmoji(em)}
                 className={`flex h-10 w-10 items-center justify-center rounded-xl text-xl transition-all ${
-                  emoji === em ? "ring-2 ring-orange-400" : "ring-1 ring-orange-100"
+                  emoji === em ? "ring-2 ring-brand-400" : "ring-1 ring-brand-100"
                 }`}
                 style={{ backgroundColor: color }}
               >
@@ -297,7 +297,7 @@ export function PostFormPage() {
                 key={c.value}
                 type="button"
                 onClick={() => setColor(c.value)}
-                className={`h-7 w-7 rounded-full transition-all ${color === c.value ? "ring-2 ring-orange-500 ring-offset-2" : ""}`}
+                className={`h-7 w-7 rounded-full transition-all ${color === c.value ? "ring-2 ring-brand-500 ring-offset-2" : ""}`}
                 style={{ backgroundColor: c.value }}
                 aria-label={c.label}
               />
@@ -305,7 +305,7 @@ export function PostFormPage() {
           </div>
         </Field>
 
-        <div className="rounded-2xl bg-orange-50 p-4">
+        <div className="rounded-2xl bg-brand-50 p-4">
           <p className="mb-3 text-sm font-bold text-ink">主催者情報</p>
           {organizers.length > 0 && (
             <label className="mb-3 flex items-center gap-2 text-sm text-ink-soft">
@@ -313,7 +313,7 @@ export function PostFormPage() {
                 type="checkbox"
                 checked={isFirstTime}
                 onChange={(e) => setIsFirstTime(e.target.checked)}
-                className="h-4 w-4 rounded border-orange-300"
+                className="h-4 w-4 rounded border-brand-300"
               />
               はじめての投稿です（新しい主催者として登録する）
             </label>
@@ -341,11 +341,11 @@ export function PostFormPage() {
           )}
         </div>
 
-        {error && <p className="text-sm font-medium text-orange-700">⚠️ {error}</p>}
+        {error && <p className="text-sm font-medium text-alert-600">⚠️ {error}</p>}
 
         <button
           type="submit"
-          className="pop-pressable rounded-full border-2 border-obsidian bg-orange-500 px-6 py-3.5 text-base font-bold text-white shadow-pop"
+          className="pop-pressable rounded-full bg-brand-500 px-6 py-3.5 text-base font-bold text-white shadow-pop"
         >
           この内容で投稿する
         </button>
@@ -355,7 +355,7 @@ export function PostFormPage() {
         .input {
           width: 100%;
           border-radius: 0.75rem;
-          border: 1px solid var(--color-orange-100);
+          border: 1px solid var(--color-brand-100);
           background: white;
           padding: 0.65rem 0.9rem;
           font-size: 0.875rem;
@@ -363,8 +363,8 @@ export function PostFormPage() {
           outline: none;
         }
         .input:focus {
-          border-color: var(--color-orange-500);
-          box-shadow: 0 0 0 3px var(--color-orange-100);
+          border-color: var(--color-brand-500);
+          box-shadow: 0 0 0 3px var(--color-brand-100);
         }
       `}</style>
     </div>
@@ -386,7 +386,7 @@ function Field({
     <label className="block">
       <span className="mb-1.5 flex items-center gap-1.5 text-sm font-bold text-ink">
         {label}
-        {required && <span className="text-orange-500">*</span>}
+        {required && <span className="text-alert-500">*</span>}
       </span>
       {children}
       {hint && <span className="mt-1 block text-xs text-ink-soft">{hint}</span>}
